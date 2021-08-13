@@ -22,7 +22,6 @@ private:
     bool buffer[SCREEN_HEIGHT][SCREEN_WIDTH] = {false};
     double cosView;
     double sqDistance;
-//    void CheckVision(std::vector<size_t>& amount, size_t i, size_t j) const;
 };
 
 
