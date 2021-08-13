@@ -5,7 +5,6 @@
 #include <regex>
 #include "vec2.h"
 #include "field.h"
-#include "unit.h"
 
 //программа получает на вход имя файла с данными о юнитах, имя файла, в который следует записать информацию,
 // имя файла в который будут нарисованы юниты (формат .ppm)
@@ -16,7 +15,6 @@ int main(int argc, char **argv) {
     }
 
     std::ifstream fin(argv[1]);
-//    std::ifstream fin("test.txt");
     if (!fin.is_open()) {
         std::cout << "1 Файл не может быть открыт!\n";
         exit(1);
@@ -61,7 +59,6 @@ int main(int argc, char **argv) {
     std::vector<size_t> amount = f.NumUnitsView();
 
     std::ofstream fout(argv[2]);
-//    std::ofstream fout("res.txt");
     if (!fout.is_open()) {
         std::cout << "2 Файл не может быть открыт!\n";
         exit(1);
@@ -72,7 +69,10 @@ int main(int argc, char **argv) {
     fout.close();
 
     std::ofstream iout(argv[3]);
-//    std::ofstream iout("image.ppm");
+    if (!iout.is_open()) {
+        std::cout << "3 Файл не может быть открыт!\n";
+        exit(1);
+    }
     f.DrawUnits(iout);
     iout.close();
     return 0;
