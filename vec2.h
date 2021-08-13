@@ -2,6 +2,8 @@
 #define RAYTRACER_VECTOR_H
 
 #include <iostream>
+#define CMP(x, y)  (fabs(x - y) <= FLT_EPSILON * fmax(1.0, fmax(fabs(x), fabs(y))))
+#define DEG2RAD(x) ((x) * 0.0174533f)
 
 typedef struct vector2 {
     double x;

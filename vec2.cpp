@@ -2,8 +2,6 @@
 #include <cmath>
 #include <cfloat>
 
-#define CMP(x, y)  (fabs(x - y) <= FLT_EPSILON * fmax(1.0, fmax(fabs(x), fabs(y))))
-
 
 vector2 operator+(const vector2 &l, const vector2 &r) {
     return {l.x + r.x, l.y + r.y};
