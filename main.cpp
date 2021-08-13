@@ -8,7 +8,7 @@
 #include "unit.h"
 
 //программа получает на вход имя файла с данными о юнитах, имя файла, в который следует записать информацию,
-// имя файла в который будут нарисованы юниты
+// имя файла в который будут нарисованы юниты (формат .ppm)
 int main(int argc, char **argv) {
     if (argc != 4) {
         std::cout << "не хватает данных";
@@ -16,7 +16,7 @@ int main(int argc, char **argv) {
     }
 
     std::ifstream fin(argv[1]);
-    //std::ifstream fin("test.txt");
+//    std::ifstream fin("test.txt");
     if (!fin.is_open()) {
         std::cout << "1 Файл не может быть открыт!\n";
         exit(1);
@@ -70,5 +70,10 @@ int main(int argc, char **argv) {
         fout << "Юнит" << i + 1 << ": видит " << amount[i] << "\n";
     }
     fout.close();
+
+    std::ofstream iout(argv[3]);
+//    std::ofstream iout("image.ppm");
+    f.DrawUnits(iout);
+    iout.close();
     return 0;
 }
