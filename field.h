@@ -5,7 +5,6 @@
 #include <utility>
 #include <vector>
 #include <cmath>
-#include <stdint.h>
 
 #define SCREEN_WIDTH 301
 #define SCREEN_HEIGHT 301
